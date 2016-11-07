@@ -4,7 +4,6 @@ from django.shortcuts import redirect, render
 from party.models import *
 from dac_handler.forms import DACInfo
 
-
 def index(request):
     context = {
         'texts': Text().get_text().home(),
