@@ -133,7 +133,10 @@
         {% else %}
         <ul class="nav navbar-user-nav pull-right">
           {{ hook_guest_menu_prepend|safe }}
-          <li><a href="{{ url('sign_in') }}" title="{% trans %}Sign In to Your Account{% endtrans %}" class="tooltip-bottom btn btn-danger">{% trans %}Sign In{% endtrans %}</a></li>{% if settings.account_activation != 'block' %}
+          <li><a href="{{ url('sign_in') }}" title="{% trans %}Sign In to Your Account{% endtrans %}" class="tooltip-bottom btn btn-danger">{% trans %}Entrar{% endtrans %}</a></li>
+
+          <!-- REGISTER BUTTON REMOVED!! -->
+          {% if settings.account_activation == 'block-OFF' %}
           <li><a href="{{ url('register') }}" title="{% trans %}Register new account{% endtrans %}" class="tooltip-bottom btn btn-inverse">{% trans %}Register{% endtrans %}</a></li>{% endif %}
           {{ hook_guest_menu_append|safe }}
         </ul>
