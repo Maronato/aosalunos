@@ -108,3 +108,20 @@ class Members(models.Model):
     twitter = models.URLField(null=True, blank=True)
     github = models.URLField(null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
+
+    @staticmethod
+    def create_member(ra):
+        try:
+            p = Profile.objects.get(ra=ra)
+        except:
+            return None
+        p.is_mod = True
+        p.save()
+        try:
+            m = Members.objects.get(profile=p)
+            return m
+        except:
+            pass
+        m = Members(profile=p)
+        m.save()
+        return m
