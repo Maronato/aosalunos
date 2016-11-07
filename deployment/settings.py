@@ -4,7 +4,7 @@ import dj_database_url
 import os
 
 # Allow debug?
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -93,7 +93,7 @@ HAYSTACK_CONNECTIONS = {
 # Cookies configuration
 COOKIES_DOMAIN = ''  # E.g. a cookie domain for "www.mysite.com" or "forum.mysite.com" is ".mysite.com"
 COOKIES_PATH = '/'
-COOKIES_PREFIX = 'a0sA1un0S'  # Allows you to avoid cookies collisions with other applications.
+COOKIES_PREFIX = 'a0sA1un0SdeV'  # Allows you to avoid cookies collisions with other applications.
 COOKIES_SECURE = False  # Set this to true if, AND ONLY IF, you are using SSL on your forum.
 
 # Sessions configuration
