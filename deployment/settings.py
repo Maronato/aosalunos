@@ -91,7 +91,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 # Cookies configuration
-COOKIES_DOMAIN = '.'  # E.g. a cookie domain for "www.mysite.com" or "forum.mysite.com" is ".mysite.com"
+COOKIES_DOMAIN = ''  # E.g. a cookie domain for "www.mysite.com" or "forum.mysite.com" is ".mysite.com"
 COOKIES_PATH = '/'
 COOKIES_PREFIX = 'a0sA1un0S'  # Allows you to avoid cookies collisions with other applications.
 COOKIES_SECURE = False  # Set this to true if, AND ONLY IF, you are using SSL on your forum.
