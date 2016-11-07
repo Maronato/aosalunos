@@ -59,7 +59,10 @@ def signature_markdown(acl, text):
         del md.inlinePatterns['image_link']
     else:
         emojis = EmojiExtension()
-        emojis.extendMarkdown(md)
+        try:
+            emojis.extendMarkdown(md)
+        except:
+            pass
 
     del md.parser.blockprocessors['hashheader']
     del md.parser.blockprocessors['setextheader']
