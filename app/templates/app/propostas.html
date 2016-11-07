@@ -1,0 +1,52 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="profile-page">
+    <div class="header header-filter" style="background-image: url('http://chastel.be/wp-content/uploads/2014/06/14_06_19_PRESTATION_SERMENT_CHAMBRE_0000.jpg');">
+        <div class="row">
+            <h1 class="site-banner">
+                Somos o corpo<br>
+                Você, a mente
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container marketing">
+
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_1 | safe }}</h2>
+            <p class="lead">
+            {{ texts.text_1 | safe }}
+            </p>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+    <ul class="col-md-6 col-md-offset-3">
+        {% for promise in promises %}
+
+                <li style="list-style: none"><h3>{{ promise.title }}</h3></li>
+                <blockquote>{{ promise.text | safe }} </blockquote>
+                <hr>
+        {% endfor %}
+    </ul>
+
+    </div>
+
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_2 | safe }}</h2>
+            <p class="lead">
+            {{ texts.text_2 | safe }}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "party/base.html" %}
+
+{% block content1 %}
+
+<div class="container marketing">
+
+    <div class="row featurette">
+        <h2 class="text-center"> Conte-me mais sobre você </h2>
+        <hr class="featurette-divider">
+        <h3 class="text-center"> Todos os campos são opcionais </h2>
+        <form action="{{ url('party_profile') }}" class="text-center" method="post">
+            {% csrf_token %}
+            <div class="col-md-offset-2">
+            {% for f in form %}
+            <div class="col-md-5">
+
+                <div style="text-align:left;" class="form-group label-floating">
+                    <label class="control-label">{{ f.label }}</label>
+                    {{ f.errors | safe }}
+                    {{ f | safe}}
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-primary btn-round" value="Submit" />
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content1 %}

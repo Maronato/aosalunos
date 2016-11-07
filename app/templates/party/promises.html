@@ -1,0 +1,89 @@
+{% extends "party/base.html" %}
+
+{% block content1 %}
+
+<div class="container marketing">
+
+    <div class="row featurette">
+        <h2 class="text-center"> Propostas </h2>
+        <hr class="featurette-divider">
+        <div class="col-xs-3">
+            <h3 class="text-center"> Opções </h3>
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                <li class="active">
+                    <a href="#dashboard" role="tab" data-toggle="tab">
+                        <i class="material-icons">dashboard</i>
+                        Criar nova
+                    </a>
+                </li>
+                <li>
+                    <a href="#tasks" role="tab" data-toggle="tab">
+                        <i class="material-icons">list</i>
+                        Editar anteriores
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <div class="tab-content gallery">
+                <div class="tab-pane active" id="dashboard">
+                    <form action="{{ url('party_add_promises') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Nova Proposta </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                        {{ form.title.errors | safe }}
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">{{ form.title.label }}</label>
+                                {{ form.title | safe }}
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                        {{ form.title.errors | safe }}
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">{{ form.text.label }}</label>
+                                {{ form.text | safe }}
+
+                            </div>
+                        </div>
+
+                        <input type="submit" class="btn btn-primary btn-round" value="Submit" />
+                    </form>
+                </div>
+                <div class="tab-pane" id="tasks">
+                    <h3 class="text-center"> Alterar Propostas </h3>
+                    {% for promise in promises %}
+                        <hr class="featurette-divider col-md-12">
+                        <form action="{{ url('party_edit_promises') }}" class="text-center" method="post">
+                            {% csrf_token %}
+                            <div class="col-md-10 col-md-offset-1">
+                                <div style="text-align:left;" class="form-group label-floating">
+                                    <label class="control-label">Título</label>
+                                    <input required class="form-control" maxlength="200" name="title" type="text" value="{{ promise.title }}">
+                                </div>
+                                <div style="text-align:left;" class="form-group label-floating">
+                                    <label class="control-label">Texto</label>
+                                    <textarea required class="form-control" cols="40" name="text" rows="10">{{ promise.text }}</textarea>
+                                </div>
+                                <input type="hidden" name="id" value="{{ promise.id }}">
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-3">
+                                <input type="submit" class="btn btn-warning btn-round" value="Salvar alterações" />
+                            </div>
+                        </form>
+                        <form action="{{ url('party_delete_promises') }}" class="text-center" method="post">
+                            {% csrf_token %}
+                            <div class="col-xs-3">
+                                <input style="d" type="submit" class="btn btn-danger btn-round" value="Deletar" />
+                            </div>
+                            <input type="hidden" name="id" value="{{ promise.id }}">
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content1 %}

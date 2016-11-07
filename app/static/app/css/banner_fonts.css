@@ -1,0 +1,21 @@
+.site-banner{
+	font-size: 7vw;
+	color: white;
+	text-align: center;
+	margin: 2vw;
+	color: white;
+	z-index: 2;
+	position: relative;
+}
+
+@media (max-width: 800px) {
+	.site-banner{
+		font-size: 10vw;
+		color: white;
+		text-align: center;
+		margin: 10vw;
+		color: white;
+		z-index: 2;
+		position: relative;
+	}
+}

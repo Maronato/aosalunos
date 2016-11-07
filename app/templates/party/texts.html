@@ -1,0 +1,243 @@
+{% extends "party/base.html" %}
+
+{% block content1 %}
+
+<div class="container marketing">
+
+    <div class="row featurette">
+        <h2 class="text-center"> Propostas </h2>
+        <hr class="featurette-divider">
+        <div class="col-xs-3">
+            <h3 class="text-center"> Opções </h3>
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                <li class="active">
+                    <a href="#Home" role="tab" data-toggle="tab">
+                        <i class="material-icons">dashboard</i>
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a href="#Consu" role="tab" data-toggle="tab">
+                        <i class="material-icons">list</i>
+                        Sobre Consu
+                    </a>
+                </li>
+                <li>
+                    <a href="#About" role="tab" data-toggle="tab">
+                        <i class="material-icons">list</i>
+                        Sobre nós
+                    </a>
+                </li>
+                <li>
+                    <a href="#Promise" role="tab" data-toggle="tab">
+                        <i class="material-icons">list</i>
+                        Propostas
+                    </a>
+                </li>
+                <li>
+                    <a href="#Join" role="tab" data-toggle="tab">
+                        <i class="material-icons">list</i>
+                        Participe
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <div class="tab-content gallery">
+                <div class="tab-pane active" id="Home">
+                    <form action="{{ url('party_texts') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Início </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 1º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title1" type="text" value="{{ texts.home.title_1 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 1º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text1" rows="10">{{ texts.home.text_1 }}</textarea>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 2º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title2" type="text" value="{{ texts.home.title_2 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 2º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text2" rows="10">{{ texts.home.text_2 }}</textarea>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="home">
+                        <input type="submit" class="btn btn-primary btn-round" value="Salvar alterações" />
+                    </form>
+                </div>
+
+
+                <div class="tab-pane" id="Consu">
+                    <form action="{{ url('party_texts') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Sobre o Consu </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 1º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title1" type="text" value="{{ texts.consu.title_1 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 1º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text1" rows="10">{{ texts.consu.text_1 }}</textarea>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 2º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title2" type="text" value="{{ texts.consu.title_2 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 2º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text2" rows="10">{{ texts.consu.text_2 }}</textarea>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="consu">
+                        <input type="submit" class="btn btn-primary btn-round" value="Salvar alterações" />
+                    </form>
+                </div>
+                <div class="tab-pane" id="About">
+                    <form action="{{ url('party_texts') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Sobre nós </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 1º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title1" type="text" value="{{ texts.about.title_1 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 1º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text1" rows="10">{{ texts.about.text_1 }}</textarea>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 2º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title2" type="text" value="{{ texts.about.title_2 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 2º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text2" rows="10">{{ texts.about.text_2 }}</textarea>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="about">
+                        <input type="submit" class="btn btn-primary btn-round" value="Salvar alterações" />
+                    </form>
+                </div>
+
+                <div class="tab-pane" id="Promise">
+                    <form action="{{ url('party_texts') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Propostas </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 1º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title1" type="text" value="{{ texts.promise.title_1 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 1º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text1" rows="10">{{ texts.promise.text_1 }}</textarea>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 2º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title2" type="text" value="{{ texts.promise.title_2 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 2º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text2" rows="10">{{ texts.promise.text_2 }}</textarea>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="promise">
+                        <input type="submit" class="btn btn-primary btn-round" value="Salvar alterações" />
+                    </form>
+                </div>
+
+
+                <div class="tab-pane" id="Join">
+                    <form action="{{ url('party_texts') }}" class="text-center" method="post">
+                        <h3 class="text-center"> Participe </h3>
+                        {% csrf_token %}
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 1º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title1" type="text" value="{{ texts.join.title_1 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 1º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text1" rows="10">{{ texts.join.text_1 }}</textarea>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Título do 2º Texto</label>
+                                <input required class="form-control" maxlength="200" name="title2" type="text" value="{{ texts.join.title_2 }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div style="text-align:left;" class="form-group label-floating">
+                                <label class="control-label">Texto do 2º Texto</label>
+                                <textarea required class="form-control" cols="40" name="text2" rows="10">{{ texts.join.text_2 }}</textarea>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="join">
+                        <input type="submit" class="btn btn-primary btn-round" value="Salvar alterações" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content1 %}

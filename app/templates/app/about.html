@@ -1,0 +1,92 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="profile-page">
+    <div class="header header-filter" style="background-image: url('http://darkroom-cdn.s3.amazonaws.com/2015/02/AP-APTOPIX-Spain-Students-Strike-Protest.jpg');">
+        <div class="row">
+            <h1 class="site-banner">
+                Somos alunos<br>
+                Assim como você
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container marketing">
+
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_1 | safe }}</h2>
+            <p class="lead">
+            {{ texts.text_1 | safe }}
+            </p>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        {% for member in members %}
+            <div class="col-md-4">
+                <div class="card card-signup">
+                    <div class="header header-info text-center">
+                        {% if member.picture %}
+                        <img src="{{ member.picture }}" style="max-height: 250px; max-width: 250px" alt="Thumbnail Image" class="img-circle img-raised">
+                        {% else %}
+                        <img src="http://i1.wp.com/www.thisblogrules.com/wp-content/uploads/2010/02/batman-for-facebook.jpg?resize=250%2C250" class="img-circle img-raised">
+                        {% endif %}
+                        <div class="social-line">
+                            {% if member.facebook %}
+                            <a href="{{ member.facebook }}" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            {% endif %}
+                            {% if member.twitter %}
+                            <a href="{{ member.twitter }}" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            {% endif %}
+                            {% if member.github %}
+                            <a href="{{ member.github }}" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            {% endif %}
+                            {% if member.email %}
+                            <a href="mailto:{{ member.email }}" class="btn btn-simple btn-just-icon">
+                                <i class="fa fa-envelope-o"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <h3>{{ member.name }}</h3>
+                    </div>
+                    {% if member.description %}
+                    <p class="text-divider">{{ member.description }}</p>
+                    {% endif %}
+                    {% if member.rola %}
+                    <p class="text-divider">No Aos Alunos eu sou</p>
+                    <p class="text-center">{{ member.role }}</p>
+                    {% endif %}
+                    {% if member.occupation %}
+                    <p class="text-divider">e na vida eu sou</p>
+                    <p class="text-center">{{ member.occupation }}</p>
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_2 | safe }}}</h2>
+            <p class="lead">
+            {{ texts.text_2 | safe }}}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

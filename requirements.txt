@@ -1,0 +1,26 @@
+django==1.6.4
+django-debug-toolbar==1
+django-floppyforms
+django-haystack==2.4.1
+django-jinja==0.24
+django-mptt<0.6
+jinja2
+markdown<2.3
+path.py
+Pillow
+pytz==2013b
+recaptcha-client
+south
+Unidecode
+whoosh<2.6
+sqlparse <0.2
+whitenoise==2.0.6
+dj-database-url==0.4.0
+psycopg2==2.4.4
+gunicorn==19.4.5
+django-storages<1.5.1
+boto
+
+requests==2.10.0
+git+https://github.com/euske/pdfminer.git
+beautifulsoup4==4.4.1

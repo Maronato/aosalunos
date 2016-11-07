@@ -1,0 +1,76 @@
+{% extends "app/base.html" %}
+{% block content %}
+<style>
+.errorlist {
+    font-size: 20px;
+    list-style: none
+}
+</style>
+<div class="profile-page">
+    <div class="header header-filter" style="background-image: url('http://3.bp.blogspot.com/-Wbnb4b4posE/VONrYpVzgvI/AAAAAAAAIdY/UfJcx3L2dkc/s1600/7.png');">
+        <div class="row">
+            <h1 class="site-banner">
+                Alunos unidos<br>
+                São mais fortes
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container marketing">
+
+
+
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_1 | safe}}</h2>
+            <p class="lead">
+            {{ texts.text_1 | safe }}
+            </p>
+        </div>
+    </div>
+
+    {% if not user.is_authenticated() %}
+    <div class="row featurette">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="featurette-heading">{{ texts.title_2 | safe}}</h2>
+            <p class="lead">
+            {{ texts.text_2 | safe }}
+            </p>
+        </div>
+    </div>
+
+    <div class="row featurette">
+        <hr class="featurette-divider">
+        {% if form.errors %}
+        <h3 class="text-center"> Oops! Seu formulário contém erros: </h3>
+        {% for key, value in form.errors.items() %}
+        {% if key == "__all__" %}
+        <div style="color: red" class="col-xs-4 col-xs-offset-4 text-center">{{ value | safe }}</div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        <form action="{{ url('dac_submit') }}" class="text-center" method="post">
+            {% csrf_token %}
+            <div class="col-md-offset-2">
+            {% for f in form %}
+            <div class="col-md-5">
+                <div style="color: red">{{ f.errors | safe }}</div>
+                <div style="text-align:left;" class="form-group label-floating">
+                    <label class="control-label">{{ f.label }}</label>
+                    {{ f | safe}}
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-primary btn-round" value="Criar conta" />
+            </div>
+        </form>
+    </div>
+    {% endif %}
+
+</div>
+
+
+{% endblock content %}
