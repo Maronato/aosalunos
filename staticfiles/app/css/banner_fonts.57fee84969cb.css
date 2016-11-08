@@ -1,15 +1,15 @@
-.site-banner{
-		font-size: 5vw;
-		color: white;
-		text-align: center;
-		margin-top: 0px;
-		color: white;
-		z-index: 2;
-		position: relative;
-	}
+.site-banner2{
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
 .jumbotron {
 
-  height: 20vw;
+  height: 350px;
   color: white;
   background:transparent;
 }
@@ -29,8 +29,11 @@
 	}
 	.jumbotron {
 
-		height: 40vw;
+		height: 250px;
 		color: white;
 		background:transparent;
+	}
+	.site-nav{
+		margin-bottom: 0px;
 	}
 }

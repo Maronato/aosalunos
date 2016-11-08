@@ -29,8 +29,11 @@
 	}
 	.jumbotron {
 
-		height: 40vw;
+		height: 15vw;
 		color: white;
 		background:transparent;
+	}
+	.site-nav{
+		margin-bottom: 0px;
 	}
 }

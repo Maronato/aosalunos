@@ -1,0 +1,33 @@
+.site-banner2{
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    margin-top: 0vw;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.jumbotron {
+
+  height: 350px;
+  color: white;
+  background:transparent;
+}
+.site-nav{
+	margin-bottom: 0px;
+}
+
+@media (max-width: 800px) {
+	.site-banner{
+		font-size: 10vw;
+		color: white;
+		text-align: center;
+		margin: 10vw;
+		color: white;
+		z-index: 2;
+		position: relative;
+	}
+	.site-nav{
+		margin-bottom: 3px;
+	}
+}

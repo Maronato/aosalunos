@@ -33,4 +33,7 @@
 		color: white;
 		background:transparent;
 	}
+	.site-nav{
+		margin-bottom: 0px;
+	}
 }
