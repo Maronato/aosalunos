@@ -1,16 +1,20 @@
 {% extends "_email/base.html" %}
 
-{% block title %}{% trans board_name=settings.board_name %}Your New Password on {{ board_name }}{% endtrans %}{% endblock %}
+{% block title %}{% trans board_name=settings.board_name %}Sua nova senha em {{ board_name }}{% endtrans %}{% endblock %}
 
 {% block content %}
-<p {{ style_p|safe }}>{% trans username=user.username %}{{ username }}, you are receiving this message because you have requested for new password to be generated and set on your account.{% endtrans %}</p>
-<p {{ style_p|safe }}>{% trans %}Your new password:{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans username=user.username %}{{ username }}, você está recebendo essa mensagem porque pediu a alteração de sua senha.{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}Sua nova senha:{% endtrans %}</p>
 <div {{ style_well_big|safe }}>
   {{ password }}
 </div>
-<p {{ style_p|safe }}>{% trans %}You can sign in to your account using new password by following this link:{% endtrans %}</p>
-<a href="{{ board_address }}{{ url('sign_in') }}" {{ style_button|safe }}>{% trans %}Sign In{% endtrans %}</a>
+<p {{ style_p|safe }}>{% trans %}Você pode entrar em sua conta usando sua nova senha pelo link abaixo:{% endtrans %}</p>
+<a href="{{ board_address }}{{ url('sign_in') }}" {{ style_button|safe }}>{% trans %}Login{% endtrans %}</a>
 
-<p {{ style_p|safe }}>{% trans %}If the above link is not clickable, copy and paste this link into your web browser's address bar:{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}Se o link acima não for clicável, copie e cole o texto abaixo em seu navegador:{% endtrans %}</p>
 <a href="{{ board_address }}{{ url('sign_in') }}" {{ style_link|safe }}>{{ board_address }}{{ url('sign_in') }}</a>
+
+<p {{ style_p|safe }}>{% trans %}Recomendamos que você altere sua nova senha usando seu <a href="{{ board_address }}/forum/usercp/credentials/">Painel de Controle</a>.<br>
+Essa será a única vez que te enviaremos sua senha atual. Por segurança nós não guardamos senhas de usuários, encriptando-as de maneira irreversível para mantê-las seguras.{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}{% endtrans %}</p>
 {% endblock %}

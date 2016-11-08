@@ -1,12 +1,15 @@
 {% extends "_email/base.txt" %}
 
-{% block title %}{% trans board_name=settings.board_name %}Your New Password on {{ board_name }}{% endtrans %}{% endblock %}
+{% block title %}{% trans board_name=settings.board_name %}Sua nova senha em {{ board_name }}{% endtrans %}{% endblock %}
 
 {% block content %}
-{% trans username=user.username %}{{ username }}, you are receiving this message because you have requested for new password to be generated and set on your account.{% endtrans %}
+{% trans username=user.username %}{{ username }}, você está recebendo essa mensagem porque pediu a alteração de sua senha.{% endtrans %}
 
-{% trans %}Your new password:{% endtrans %} {{ password }}
+{% trans %}Sua nova senha:{% endtrans %} {{ password }}
 
-{% trans %}You can sign in to your account using new password by following this link:{% endtrans %}
+{% trans %}Você pode entrar em sua conta usando sua nova senha pelo link abaixo:{% endtrans %}
 {{ board_address }}{{ url('sign_in') }}
+{% trans %}
+Recomendamos que você altere sua nova senha usando seu Painel de Controle.
+Essa será a única vez que te enviaremos sua senha atual. Por segurança nós não guardamos senhas de usuários, encriptando-as de maneira irreversível para mantê-las seguras.{% endtrans %}
 {% endblock %}

@@ -1,12 +1,12 @@
 {% extends "_email/base.txt" %}
 
-{% block title %}{% trans board_name=settings.board_name %}Confirm New Password Request on {{ board_name }}{% endtrans %}{% endblock %}
+{% block title %}{% trans board_name=settings.board_name %}Confirmar alteração de senha em {{ board_name }}{% endtrans %}{% endblock %}
 
 {% block content %}
-{% trans username=user.username %}{{ username }}, you are receiving this message because you have requested for new password to be generated and set on your account.{% endtrans %}
+{% trans username=user.username %}{{ username }}, você está recebendo essa mensagem porque pediu a alteração de sua senha.{% endtrans %}
 
-{% trans %}To confirm that you want to reset your account's password with new one click the link below:{% endtrans %}
+{% trans %}Para confirmar que deseja alterar sua senha, clique no link abaixo:{% endtrans %}
 {{ board_address }}{{ url('reset_password', username=user.username_slug, user=user.id, token=user.token) }}
 
-{% trans %}Your new password will be sent back to you in next message once you click confirmation link.{% endtrans %}
+{% trans %}Sua nova senha será enviada a você em uma outra mensagem, assim que você clicar no link.{% endtrans %}
 {% endblock %}

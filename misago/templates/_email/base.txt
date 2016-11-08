@@ -1,4 +1,4 @@
-{% trans username=user.username %}Hey, {{ username }}!{% endtrans %}
+{% trans username=user.username %}Olá, {{ username }}!{% endtrans %}
 {% block title %}{% endblock %}
 ========================================
 {% block content %}{% endblock %}

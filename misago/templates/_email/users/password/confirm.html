@@ -1,15 +1,15 @@
 {% extends "_email/base.html" %}
 
-{% block title %}{% trans board_name=settings.board_name %}Confirm New Password Request on {{ board_name }}{% endtrans %}{% endblock %}
+{% block title %}{% trans board_name=settings.board_name %}Confirmar alteração de senha em {{ board_name }}{% endtrans %}{% endblock %}
 
 {% block content %}
-<p {{ style_p|safe }}>{% trans username=user.username %}{{ username }}, you are receiving this message because you have requested for new password to be generated and set on your account.{% endtrans %}</p>
-<p {{ style_p|safe }}>{% trans %}To confirm that you want to reset your account's password with new one click the link below:{% endtrans %}</p>
-<a href="{{ board_address }}{{ url('reset_password', username=user.username_slug, user=user.id, token=user.token) }}" {{ style_button|safe }}>{% trans %}Reset my password{% endtrans %}</a>
+<p {{ style_p|safe }}>{% trans username=user.username %}{{ username }}, você está recebendo essa mensagem porque pediu a alteração de sua senha.{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}Para confirmar que deseja alterar sua senha, clique no link abaixo:{% endtrans %}</p>
+<a href="{{ board_address }}{{ url('reset_password', username=user.username_slug, user=user.id, token=user.token) }}" {{ style_button|safe }}>{% trans %}Alterar minha senha{% endtrans %}</a>
 
-<p {{ style_p|safe }}>{% trans %}If the above link is not clickable, copy and paste this link into your web browser's address bar:{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}Se o link acima não for clicável, copie e cole o texto abaixo em seu navegador:{% endtrans %}</p>
 <a href="{{ board_address }}{{ url('reset_password', username=user.username_slug, user=user.id, token=user.token) }}" {{ style_link|safe }}>{{ board_address }}{{ url('reset_password', username=user.username_slug, user=user.id, token=user.token) }}</a>
 
-<p {{ style_p|safe }}>{% trans %}Your new password will be sent back to you in next message once you click confirmation link.{% endtrans %}</p>
+<p {{ style_p|safe }}>{% trans %}Sua nova senha será enviada a você em uma outra mensagem, assim que você clicar no link.{% endtrans %}</p>
 
 {% endblock %}
