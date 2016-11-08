@@ -95,16 +95,17 @@ html, body {
 	vertical-align: top;
 }
 
-
-.footer-distributed hr {
-	border-color: #52595f;
-}
-
-.footer-distributed .footer-bottom {
-	margin-left: 20%;
+/*Footer divider*/
+/*.footer-distributed hr {
 	width: 60%;
-}
+	margin-left: 20%;
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
 
+}*/
 
 /* Footer left */
 
@@ -265,10 +266,5 @@ html, body {
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-
-	.footer-distributed .footer-bottom {
-		margin-left: 0;
-		width: 100%
-}
 
 }

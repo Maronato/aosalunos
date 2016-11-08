@@ -84,7 +84,7 @@ html, body {
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 30px 30px;
+	padding: 30px 510px;
 	margin-top: 80px;
 }
 
@@ -268,7 +268,7 @@ html, body {
 
 	.footer-distributed .footer-bottom {
 		margin-left: 0;
-		width: 100%
+		width: 100%;
 }
 
 }
