@@ -3,11 +3,15 @@ from party.models import Members
 
 
 class Command(BaseCommand):
-    help = 'Clears old alerts'
-
-    def handle(self, *args, **options):
-        ra = int(options['ra'])
-        return Members.create_member(ra)
+    help = 'Manually add member to party'
 
     def add_arguments(self, parser):
-        parser.add_argument('ra')
+        parser.add_argument('ra', )
+
+    def handle(self, *args, **options):
+        member = Members.create_member(int(args[0]))
+        if member is not None:
+            print("Member created")
+        else:
+            print("RA not registered")
+        return
