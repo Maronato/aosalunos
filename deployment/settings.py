@@ -93,7 +93,7 @@ HAYSTACK_CONNECTIONS = {
 # Cookies configuration
 COOKIES_DOMAIN = ''  # E.g. a cookie domain for "www.mysite.com" or "forum.mysite.com" is ".mysite.com"
 COOKIES_PATH = '/'
-COOKIES_PREFIX = 'a0sA1un0SdeV'  # Allows you to avoid cookies collisions with other applications.
+COOKIES_PREFIX = 'ap3nAsA1un0S'  # Allows you to avoid cookies collisions with other applications.
 COOKIES_SECURE = False  # Set this to true if, AND ONLY IF, you are using SSL on your forum.
 
 # Sessions configuration
@@ -196,7 +196,7 @@ DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_ACCOUNT')
 # erros. First setting is origin of error emails, while second is message title prefix that
 # makes messages easier to spot in your inbox
 SERVER_EMAIL = os.environ.get('EMAIL_ACCOUNT')
-EMAIL_SUBJECT_PREFIX = '[AosAlunos ERROR]'
+EMAIL_SUBJECT_PREFIX = '[ApenasAlunos Screamer]'
 
 # Catch-all e-mail address
 # If DEBUG_MODE is on, all emails will be sent to this address instead of real recipient.
