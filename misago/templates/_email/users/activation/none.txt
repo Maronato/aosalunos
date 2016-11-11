@@ -1,6 +1,6 @@
 {% extends "_email/base.txt" %}
 
-{% block title %}{% trans board_name=settings.board_name %}Bem vindo, {{ board_name }}!{% endtrans %}{% endblock %}
+{% block title %}{% trans board_name=settings.board_name %}Bem vindo ao {{ board_name }}!{% endtrans %}{% endblock %}
 
 {% block content %}
 {% trans username=user.username %}{{ username }}, você está recebendo essa mensagem porque usou esse email para criar sua conta.{% endtrans %}
