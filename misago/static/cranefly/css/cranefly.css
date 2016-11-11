@@ -1196,3 +1196,5 @@ a.btn-link:hover,a.btn-link:active,a.btn-link:focus{color:#333;text-decoration:n
 .post-label-top{background-color:#f89406}
 .index-rank-apenas ul li .label{background-color:#027c49;color:#fff;text-shadow:0 1px 0 #000000	}
 .post-label-apenas{background-color:#027c49}
+.index-rank-dev ul li .label{background-color:#000000;color:#fff;text-shadow:0 1px 0 #4c4c4c}
+.post-label-dev{background-color:#000000}
