@@ -7,34 +7,137 @@
 <div class="page-header header-primary">
   <div class="container">
     {{ messages_list(messages) }}
-    <h1>{% trans %}Misago Flavored Markdown{% endtrans %}</h1>
+    <h1>{% trans %}Ajuda com Markdown{% endtrans %}</h1>
   </div>
 </div>
 
 <div class="container container-primary">
-  <p class="lead">{% trans %}Your message is composed of blocks like paragraphs, headers, lists or code listings. All blocks with exception of code blocks may contain in-line elements like links, images, movies, underlining and bolding.{% endtrans %}</p>
+  <p class="lead">{% trans %}Sua mensagem pode ser composta tanto de texto normal quanto de vários elementos descritos a seguir:{% endtrans %}</p>
 
-  <h1>{% trans %}Block level elements{% endtrans %}</h1>
-  <p>{% trans %}Lorem ipsum dolor met.{% endtrans %}</p>
-
-  <h2>{% trans %}Paragraphs{% endtrans %}</h2>
-  <p>{% trans %}Paragraphs are blocks of text separated by empty lines.{% endtrans %}</p>
-  <blockcode>
-    <pre>Nunc interdum ipsum a accumsan suscipit. Maecenas eget nunc sollicitudin augue convallis pulvinar. Duis dapibus, ante eget fringilla eleifend, metus odio bibendum risus, eu placerat diam diam gravida magna. Integer in blandit arcu, eget pretium ligula.
-
-Curabitur tempus convallis orci, sed hendrerit mi. Donec lectus lectus, rutrum et pharetra quis, viverra at enim. Maecenas at dolor sed erat consectetur lacinia vitae at turpis. In faucibus nisl at tortor rutrum, non convallis enim placerat.</pre>
+  <h2>Títulos</h2>
+  <p>Você pode adicionar diversos tipos de título usando "hashtags" <code>#</code></p>
+  <blockcode><pre>
+  # Esse é um título tipo 1; &lt;h1&gt;
+  ## Esse é um título tipo 2; &lt;h2&gt;
+  ...
+  ###### Esse é um título tipo 6; &lt;h6&gt;
+  </pre>
+  </blockcode>
+  Resultam em:
+  <blockcode><pre>
+  <h1>Esse é um título tipo 1; &lt;h1&gt;</h1>
+  <h2>Esse é um título tipo 2; &lt;h2&gt;</h2>
+  ...
+  <h6>Esse é um título tipo 6; &lt;h6&gt;</h6>
+  </pre>
   </blockcode>
 
-  <p>{% trans %}Input above becomes two paragraphs:{% endtrans %}</p>
 
-  <div class="well markdown">
-    <p>Nunc interdum ipsum a accumsan suscipit. Maecenas eget nunc sollicitudin augue convallis pulvinar. Duis dapibus, ante eget fringilla eleifend, metus odio bibendum risus, eu placerat diam diam gravida magna. Integer in blandit arcu, eget pretium ligula.</p>
-    <p>Curabitur tempus convallis orci, sed hendrerit mi. Donec lectus lectus, rutrum et pharetra quis, viverra at enim. Maecenas at dolor sed erat consectetur lacinia vitae at turpis. In faucibus nisl at tortor rutrum, non convallis enim placerat.</p>
-  </div>
+<hr>
+  <h2>Enfâses</h2>
+  <p>Você pode adicionar ênfases ao seu texto usando <code>*</code> e <code>_</code></p>
+  <blockcode>
+    <pre>
+    *Esse texto vai ser itálico*
+    _Esse texto também vai ser itálico_
+    **Esse texto vai ser em negrito**
+    __Esse texto também!__
+    *Você **pode** combinar eles*
+    </pre>
+  </blockcode>
+  Resultam em:
+  <blockcode>
+    <pre>
+    <i>Esse texto vai ser itálico</i>
+    <i>Esse texto também vai ser itálico</i>
+    <b>Esse texto vai ser em negrito</b>
+    <b>Esse texto também!</b>
+    <i>Você <b>pode</b> combinar eles</i>
+    </pre>
+  </blockcode>
+
+<hr>
+  <h2>Listas</h2>
+  <p>Você pode criar listas usando <code>*</code> antes dos items</p>
+  <blockcode>
+    <pre>
+    * Item
+    * Outro Item
+    </pre>
+  </blockcode>
+  Resultam em:
+  <pre>
+  <code>
+      <li> Item </li>
+      <li> Outro Item</li>
+  </code></pre>
 
   <hr>
 
-  <h2>{% trans %}Headers{% endtrans %}</h2>
-  <p>{% trans %}You can use headers to title sections of your message. Each header block level element which means{% endtrans %}</p>
+  <h2>Links</h2>
+  <p>Você pode adicionar links usando o formato <code>[Texto](URL)</code></p>
+  <blockcode>
+    <pre>
+    [ApenasAlunos!](http://www.apenasalunos.com.br/)
+    </pre>
+  </blockcode>
+  Resultam em:
+  <blockcode>
+    <pre>
+    <a href="http://www.apenasalunos.com.br/">ApenasAlunos!</a>
+    </pre>
+  </blockcode>
+
+  <hr>
+
+  <h2>Imagens</h2>
+  <p>Você pode adicionar Imagens usando o formato <code>![Texto](URL da Imagem)</code></p>
+  <blockcode>
+    <pre>
+    ![Gatinho](https://cdn.pixabay.com/photo/2015/08/30/10/58/cat-914110_960_720.jpg)
+    </pre>
+  </blockcode>
+  Resultam em:
+  <blockcode>
+    <pre>
+    <img title="Gatinho" src="https://cdn.pixabay.com/photo/2015/08/30/10/58/cat-914110_960_720.jpg">
+    </pre>
+  </blockcode>
+
+  <hr>
+
+  <h2>Citações</h2>
+  <p>Você pode adicionar citações com <code>></code></p>
+  <blockcode>
+    <pre>
+    > isso é uma citação
+    >> isso é uma citação dentro de uma citação
+    </pre>
+  </blockcode>
+  Resultam em:
+
+    <blockquote>isso é uma citação
+    <blockquote>isso é uma citação dentro de uma citação</blockquote></blockquote>
+
+  <hr>
+
+  <h2>Códigos</h2>
+  <p>Você pode adicionar snippets de código com <code>`</code> e <code>```</code></p>
+  <blockcode>
+    <pre>
+    `isso é um código inline`
+    ```
+    isso é um bloco de código
+    ```
+    </pre>
+  </blockcode>
+  Resultam em:<br>
+
+    <code>isso é um código inline</code>
+    <blockcode><pre>isso é um bloco de código</pre></blockcode>
+
+    <hr>
+  <h2>{% trans %}Mais{% endtrans %}</h2>
+  <p>Para mais exemplos, visite esse <a href="https://guides.github.com/features/mastering-markdown/">Link</a></p>
 </div>
 {% endblock %}
