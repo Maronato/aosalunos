@@ -43,11 +43,14 @@ class DACInfo(forms.Form):
         password1 = cleaned_data.get("password1")
         password2 = cleaned_data.get("password2")
         email = cleaned_data.get("email")
+        username = cleaned_data.get("username")
 
-        if not cleaned_data.get("username").isalnum():
-            raise forms.ValidationError(
-                "Usuário só pode conter letras e números!"
-            )
+        if username:
+            if not username.isalnum():
+                raise forms.ValidationError(
+                    "Usuário só pode conter letras e números!"
+                )
+
 
         if password1 != password2:
             raise forms.ValidationError(
