@@ -35,9 +35,9 @@ class EditProfile(forms.ModelForm):
         labels = {
             'picture': 'URL de foto de Perfil',
             'name': 'Seu nome',
-            'role': u'O que você faz na chapa',
-            'occupation': u'O que você faz na vida',
-            'description': u'Uma breve descrição sobre você',
+            'role': u'Na chapa eu sou...',
+            'occupation': u'Na vida eu sou...',
+            'description': u'Uma breve descrição sua',
             'facebook': 'URL do seu Facebook',
             'twitter': 'URL do seu Twitter',
             'github': 'URL do seu GitHub',
