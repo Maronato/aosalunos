@@ -99,7 +99,7 @@ class Members(models.Model):
         Profile,
         on_delete=models.CASCADE
     )
-    picture = models.URLField(null=True, blank=True)
+    picture = models.URLField(null=True, blank=True, max_length=500)
     name = models.CharField(max_length=200, null=True, blank=True)
     role = models.CharField(max_length=200, null=True, blank=True)
     occupation = models.CharField(max_length=200, null=True, blank=True)
