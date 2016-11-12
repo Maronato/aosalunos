@@ -33,7 +33,7 @@ class EditProfile(forms.ModelForm):
             'email': forms.TextInput(attrs={'class': 'form-control'}),
         }
         labels = {
-            'picture': 'URL de foto de Perfil',
+            'picture': 'URL de foto de Perfil (Use uma foto quadrada)',
             'name': 'Seu nome',
             'role': u'Na chapa eu sou...',
             'occupation': u'Na vida eu sou...',
