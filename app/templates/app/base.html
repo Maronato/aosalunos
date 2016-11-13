@@ -104,10 +104,12 @@
 				<!-- <li><a href="/blog/">
 					Blog
 				</a></li> -->
+				{% if not user.is_authenticated() %}
+				<li><a href="/forum/signin/">
+					Login
+				</a></li>
+				{% endif %}
 				{% if user.is_authenticated() %}
-				<!-- <li><a href="/profile/">
-					Perfil
-				</a></li> -->
 				{% if user.is_team or user.profile.is_mod %}
 				<li><a href="/party/">
 					Configurações
