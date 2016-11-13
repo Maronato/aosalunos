@@ -10,7 +10,7 @@
     <div class="form-container container-horizontal">
 
       <div class="form-header">
-        <h1>{% trans %}Sign In to Your Account{% endtrans %}</h1>
+        <h1>{% trans %}Entre na sua conta{% endtrans %}</h1>
       </div>
 
       {% if message %}
@@ -19,10 +19,10 @@
           {{ macros.draw_message_icon(message) }}
           <p><strong>{{ message.message }}</strong></p>
           {% if bad_password %}
-          <p><a href="{{ url('forgot_password') }}">{% trans %}Click here if you forgot your sign in credentials.{% endtrans %}</a></p>
+          <p><a href="{{ url('forgot_password') }}">{% trans %}Clique aqui se você esqueceu suas credenciais.{% endtrans %}</a></p>
           {% endif %}
           {% if not_active %}
-          <p><a href="{{ url('send_activation') }}">{% trans %}Click here if you didn't receive activation e-mail.{% endtrans %}</a></p>
+          <p><a href="{{ url('send_activation') }}">{% trans %}Clique aqui se você não recebeu um email de ativação.{% endtrans %}</a></p>
           {% endif %}
           {% if banned_account.reason_user %}
           {{ banned_account.reason_user|markdown|safe }}
@@ -44,14 +44,14 @@
           {% endif %}
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">{% trans %}Sign In{% endtrans %}</button>
+          <button type="submit" class="btn btn-primary">{% trans %}Entrar{% endtrans %}</button>
           <div class="signin-help">
 
-            <h2>{% trans %}Problems Signing In?{% endtrans %}</h2>
+            <h2>{% trans %}Problemas para entrar?{% endtrans %}</h2>
             <ul class="unstyled">
-              <li><a href="{{ url('forgot_password') }}"><i class="icon-refresh"></i> {% trans %}I don't remember my password{% endtrans %}</a></li>
-              <li><a href="{{ url('send_activation') }}"><i class="icon-envelope"></i> {% trans %}I haven't received activation e-mail{% endtrans %}</a></li>
-              {% if settings.account_activation != 'block' %}
+              <li><a href="{{ url('forgot_password') }}"><i class="icon-refresh"></i> {% trans %}Eu não lembro minha senha{% endtrans %}</a></li>
+              <li><a href="{{ url('send_activation') }}"><i class="icon-envelope"></i> {% trans %}Eu não recebi um email de ativação{% endtrans %}</a></li>
+              {% if settings.account_activation == 'block' %}
               <li><a href="{{ url('register') }}"><i class="icon-edit"></i> {% trans %}I don't have account{% endtrans %}</a></li>
               {% endif %}
             </ul>
