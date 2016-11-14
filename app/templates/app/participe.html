@@ -56,7 +56,11 @@
             {% for f in form %}
             <div class="col-md-5">
                 <div style="color: red">{{ f.errors | safe }}</div>
+                {% if f.name == "email" %}
+                <div style="text-align:left;" class="form-group">
+                {% else %}
                 <div style="text-align:left;" class="form-group label-floating">
+                {% endif %}
                     <label class="control-label">{{ f.label }}</label>
                     {{ f | safe}}
                 </div>
@@ -64,7 +68,7 @@
             {% endfor %}
             </div>
             <div class="col-md-12">
-                <input type="submit" class="btn btn-primary btn-round" value="Criar conta" />
+                <input type="submit" class="btn btn-info btn-round" value="Criar conta" />
                 <br>
                 <i>Obs: Por conta da lentidão da DAC, pode levar até 10 min para você receber o email de verificação.<br>Pedimos desculpas por isso.</i>
             </div>
