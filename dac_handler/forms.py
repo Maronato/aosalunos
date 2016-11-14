@@ -20,7 +20,7 @@ class DACInfo(forms.Form):
     #                            )
 
     email = forms.EmailField(label=u"Email da DAC (usado para fazer login)",
-                                widget=forms.EmailInput(attrs={'class': "form-control"}),
+                                widget=forms.EmailInput(attrs={'class': "form-control", 'placeholder': "a111111@dac.unicamp.br"}),
                                 required=True,
                                )
 
