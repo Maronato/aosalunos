@@ -15,7 +15,7 @@ def index(request):
 def about(request):
     context = {
         'texts': Text().get_text().about(),
-        'members': Members.objects.all()
+        'members': Members.objects.all().exclude(name__isnull=True).exclude(name__exact='')
     }
     return render(request, 'app/about.html', context)
 
