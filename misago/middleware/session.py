@@ -11,6 +11,7 @@ class SessionMiddleware(object):
             # Human Session
             request.session = HumanSession(request)
             request.user = request.session.get_user()
+            pass
 
     def process_response(self, request, response):
         try:

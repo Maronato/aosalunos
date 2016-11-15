@@ -5,7 +5,7 @@ $(function() {
     console.log(info_cookie);
     var cookie = getCookie(info_cookie);
     console.log(cookie);
-    if (cookie) {
+    if (cookies) {
         $("#info-panel").css("display", "block");
         $("#info-content").html(cookie.substring(1, cookie.length - 1));
     }
