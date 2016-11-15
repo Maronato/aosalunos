@@ -2,8 +2,10 @@
 
 var info_cookie = new String("info_cookie")
 $(function() {
+    console.log(info_cookie);
     var cookie = getCookie(info_cookie);
-    if (cookie != null) {
+    console.log(cookie);
+    if (cookie) {
         $("#info-panel").css("display", "block");
         $("#info-content").html(cookie.substring(1, cookie.length - 1));
     }
@@ -14,23 +16,17 @@ function hide_info() {
     $.removeCookie(info_cookie, { path: '/' });
 }
 
-function getCookie(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-        begin = dc.indexOf(prefix);
-        if (begin != 0) return null;
-    }
-    else
-    {
-        begin += 2;
-        var end = document.cookie.indexOf(";", begin);
-        if (end == -1) {
-        end = dc.length;
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
         }
     }
-    // because unescape has been deprecated, replaced with decodeURI
-    //return unescape(dc.substring(begin + prefix.length, end));
-    return decodeURI(dc.substring(begin + prefix.length, end));
+    return "";
 }
