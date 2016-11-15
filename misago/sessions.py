@@ -221,7 +221,7 @@ class HumanSession(MisagoSession):
                 if len(self._session_rk.ip) > 255:
                     ips
                 if len(self._session_rk.agent) > 255:
-                    agents
+                    self._session_rk.agent = self._session_rk.agent[:255]
 
 
 
