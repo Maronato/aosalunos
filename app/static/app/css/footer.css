@@ -272,3 +272,13 @@ html, body {
 }
 
 }
+
+
+.info-device {
+	display: block;
+}
+
+@media (max-width: 767px) {
+	.info-device {
+		display: none;
+	}

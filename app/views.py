@@ -3,13 +3,24 @@
 from django.shortcuts import redirect, render
 from party.models import *
 from dac_handler.forms import DACInfo
+from .models import InfoCookie
 
 
 def index(request):
     context = {
         'texts': Text().get_text().home(),
     }
-    return render(request, 'app/index.html', context)
+    response = render(request, 'app/index.html', context)
+
+    cookie = InfoCookie.objects.latest('id')
+    try:
+        if (cookie.id == int(request.COOKIES.get('info_cookie_id'))):
+            return response
+    except:
+        pass
+    response.set_cookie("info_cookie", cookie.c_value)
+    response.set_cookie("info_cookie_id", cookie.id)
+    return response
 
 
 def about(request):

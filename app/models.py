@@ -19,3 +19,7 @@ class Profile(models.Model):
             return Profile.objects.get(ra=number).user
         except:
             return None
+
+
+class InfoCookie(models.Model):
+    c_value = models.TextField(null=True, blank=True, default="")
