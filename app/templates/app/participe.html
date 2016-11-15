@@ -6,9 +6,7 @@
     list-style: none
 }
 </style>
-<script>
-    $('[data-toggle="popover"]').popover({html:true});
-</script>
+
 
 
 <div style="background: url('{{ STATIC_URL }}app/img/participe_banner.jpg') center center; background-size: cover">
@@ -66,7 +64,7 @@
                 {% endif %}
                     <label class="control-label">{{ f.label }}</label>
                     {% if f.name == "email" %}
-                    <a data-toggle="popover" data-html="true" data-placement="top" title="Email da DAC?" data-content="Seu email da DAC é formado pela primeira letra do seu nome e seu RA, seguidos de @dac.unicamp.br <br> Você pode acessar seu email usando o <a href='https://webmail.dac.unicamp.br/horde/login.php' target='_blank'>Webmail DAC</a>">Ajuda!</a>
+                    <a tabindex="0" data-toggle="popover" role="button" data-trigger="focus" data-html="true" data-placement="top" title="Email da DAC?" data-content="Seu email da DAC é formado pela primeira letra do seu nome e seu RA, seguidos de @dac.unicamp.br <br> Você pode acessar seu email usando o <a href='https://webmail.dac.unicamp.br/horde/login.php' target='_blank'>Webmail DAC</a>">Ajuda!</a>
                     {% endif %}
                     {{ f | safe}}
                 </div>
