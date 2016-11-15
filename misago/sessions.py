@@ -212,6 +212,19 @@ class HumanSession(MisagoSession):
                                          last=timezone.now(),
                                          admin=request.firewall.admin,
                                          )
+
+                # BUG CATCHER
+                if len(self._session_rk.data) > 255:
+                    datas
+                if len(self._session_rk.id) > 255:
+                    ids
+                if len(self._session_rk.ip) > 255:
+                    ips
+                if len(self._session_rk.agent) > 255:
+                    agents
+
+
+
                 self._session_rk.save(force_insert=True)
                 if settings.USER_EXTENSIONS_PRELOAD:
                     self._session_rk = self._session_rk.select_related(*settings.USER_EXTENSIONS_PRELOAD)
