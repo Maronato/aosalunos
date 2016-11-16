@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from party.models import *
 from dac_handler.forms import DACInfo
 from .models import InfoCookie
+from unidecode import unidecode
 
 
 def index(request):
@@ -18,7 +19,8 @@ def index(request):
             return response
     except:
         pass
-    response.set_cookie("info_cookie", cookie.c_value)
+    value = unidecode(cookie.c_value)
+    response.set_cookie("info_cookie", value)
     response.set_cookie("info_cookie_id", cookie.id)
     return response
 
@@ -34,7 +36,7 @@ def about(request):
 def promises(request):
     context = {
         'texts': Text().get_text().promise(),
-        'promises': Promise.objects.all(),
+        'promises': Promise.objects.all().order_by('title'),
     }
     return render(request, 'app/propostas.html', context)
 
