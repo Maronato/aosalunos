@@ -34,9 +34,16 @@ def about(request):
 
 
 def promises(request):
+    try:
+        promises = Promise.objects.extra(
+            select={'titlei': 'CAST(title AS INTEGER)'}
+        ).order_by('titlei')
+    except:
+        promises = Promise.objects.all().order_by(title)
+
     context = {
         'texts': Text().get_text().promise(),
-        'promises': Promise.objects.all().order_by('title'),
+        'promises': promises,
     }
     return render(request, 'app/propostas.html', context)
 
