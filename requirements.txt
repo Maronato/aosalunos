@@ -6,7 +6,7 @@ django-jinja==0.24
 django-mptt<0.6
 jinja2
 markdown<2.3
-path.py
+path.py <10
 Pillow
 pytz==2013b
 recaptcha-client
