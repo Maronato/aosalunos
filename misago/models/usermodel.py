@@ -517,7 +517,7 @@ class User(models.Model):
         # Build message and add it to queue
         email = EmailMultiAlternatives(subject, email_text, sender, [recipient])
         email.attach_alternative(email_html, "text/html")
-        request.mails_queue.append(email)
+        # request.mails_queue.append(email)
 
     def get_activation(self):
         activations = ['none', 'user', 'admin', 'credentials']
