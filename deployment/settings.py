@@ -4,7 +4,7 @@ import dj_database_url
 import os
 
 # Allow debug?
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
